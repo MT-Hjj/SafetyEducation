@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.stu_safety.dao.SignDao"    >
+    <resultMap id="BaseResultMap" type="com.stu_safety.entity.Sign">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="area" jdbcType="VARCHAR" property="area"/>
+        <result column="time" jdbcType="VARCHAR" property="time"/>
+    </resultMap>
+
+    <!-- 查询所有   -->
+    <select id="getAll" resultMap="BaseResultMap">
+        select * from sign
+    </select>
+
+    <select id="getAllCount" resultType="Integer">
+        select count(*) from sign
+    </select>
+
+    <select id="getTodayCount" resultType="Integer" parameterType="java.lang.String">
+        select count(*) from sign where time=#{time}
+    </select>
+
+    <insert id="addList" parameterType="com.stu_safety.entity.Sign">
+        <selectKey resultType="int" order="AFTER" keyProperty="id">
+            <!--    返回当前事务最后产生的id值 -->
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into sign(name,area,time)
+        values(#{name},#{area},#{time})
+    </insert>
+
+    <!--修改-->
+    <update id="update" parameterType="com.stu_safety.entity.Sign">
+        update sign set name = #{name},area = #{area},time = #{time}
+        where id = #{id}
+    </update>
+
+    <!--删除-->
+    <delete id="deleteById" parameterType="com.stu_safety.entity.Sign">
+        delete from sign where id = #{id}
+    </delete>
+
+    <select id="getCountByarea" parameterType="java.lang.String" resultType="Integer">
+        select count(*) from sign where area = #{area}
+    </select>
+
+    <select id="getTodayList" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from sign where time = #{time} order by id desc
+    </select>
+
+    <select id="getCountByNaAr" parameterType="java.lang.String" resultType="Integer">
+        select count(*) from sign where name = #{name} and time = #{time};
+    </select>
+</mapper>

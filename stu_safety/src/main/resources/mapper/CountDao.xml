@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.stu_safety.dao.CountDao"    >
+    <resultMap id="BaseResultMap" type="com.stu_safety.entity.Count">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="area" jdbcType="VARCHAR" property="area"/>
+        <result column="counts" jdbcType="INTEGER" property="counts"/>
+    </resultMap>
+
+    <select id="getListByOrder" resultMap="BaseResultMap">
+        select * from count order by counts desc
+    </select>
+    <update id="addAreaCounts" parameterType="java.lang.String">
+        update count set counts=counts+1 where area = #{area}
+    </update>
+</mapper>

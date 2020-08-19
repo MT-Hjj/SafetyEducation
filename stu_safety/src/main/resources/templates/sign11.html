@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="filetype" content="0">
+    <meta name="publishedtype" content="1">
+    <meta name="pagetype" content="2">
+    <meta name="catalogs" content="51725">
+    <meta name="subject" content="51725;1">
+    <meta name="uctk" content="enabled">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>快乐放暑假，“安全”不放假</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/detail.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/sign.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/swiper-3.4.2.min.css">
+<!--    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>-->
+    <script type="text/javascript" src="/static/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/swiper-3.4.2.min.js"></script>
+</head>
+<style>
+    .tab-wrap {
+        height: 50px;
+        width: 100%;
+        background-color: #4390EE;
+    }
+
+    .swiper-container {
+        height: 100%;
+    }
+
+    .nav {
+        width: 33%;
+        height: 100%;
+        text-align: center;
+        line-height: 50px;
+        margin-left: 10px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .active {
+        color: #d75d37;
+    }
+</style>
+<body>
+<div id="header-img">
+    <img src="/static/images/header.png" style="width: 100%; height: auto;" >
+</div>
+<div class="lanmu-title">
+    <img src="/static/images/meiridaka.png" alt="每日打卡">
+</div>
+
+<div class="zhuanti-section">
+    <div class="tab-wrap">
+        <div class="swiper-container" id="swiper">
+            <div class="swiper-wrapper nav-wrap">
+            </div>
+        </div>
+    </div>
+    <div class="tab-cont"></div>
+</div>
+
+<div class="zhuanti-foot"><span>河源日报社</span><span>新媒体中心制作</span><span>2020年7月</span></div>
+
+<script type="text/javascript">
+    (function (_this) {
+        let nav_data = ['第一步：看视频','第二步：阅读提示','第三步：完成打卡'];
+        $(_this).on('load',function () {nav_menu(nav_data)});
+        function nav_menu(data) {
+            let tab_html = '';
+            for(var i=0;i<data.length;i++){
+                tab_html += '<div class="swiper-slide nav" data-id="'+i+'">'+data[i]+'</div>'
+            }
+            $('.nav-wrap').append(tab_html);
+            $('.nav-wrap').children(':eq(0)').addClass('active');
+        }
+        // 选项卡轮播注册(在菜单渲染之后)
+        $(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',//切换方式，水平切换
+                loop: false,//是否无缝循环
+                freeMode: true, // slide 是否贴合侧边
+                slidesPerView: 3,//可视区域默认显示的个数
+                freeModeSticky: false,//使得freeMode也能自动贴合
+                roundLengths: true, //防止文字模糊
+                observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                initialSlide: 0,//默认从下标为0的开始显示
+            });
+        })
+        let objData = [{
+            content: '<div id="content_date_source">' +
+                '上传时间：2020-07-26' +
+                '视频来源：湖北省教育厅' +
+                '</div>' +
+                '<div style="text-align: center;margin-top: 50px;" class="video">' +
+                '<video width="100%" height="auto" controls="controls">' +
+                '<source src="http://www.heyuan.cn/zt/videos/1.mp4" type="video/mp4" autoplay="autoplay"/>' +
+                '</video>' +
+                '</div>'
+        },{
+            content: '<div class="content">' +
+                '<h1>2020中小学生暑期安全提示42条</h1>' +
+                '<div id="content_date_source">' +
+                '来源：广东教育' +
+                '</div>' +
+                '<img src="/static/images/news11.jpg" style="width: 100%; height: auto;" >' +
+                '<p>1、乘坐公共交通、乘电梯时要佩戴口罩<br/>2、不去人员密集场所<br/>3、外出回家先洗手<br/>4、居家时要多开窗通风<br/>5、不去疫情严重地区旅行<br/>6、作息规律、加强锻炼、营养均衡</p>' +
+                '<img src="/static/images/news12.jpg" style="width: 100%; height: auto;" >' +
+                '<p>7、遵守交通法规，不闯红灯、不翻越隔离栏<br/>8、行走或骑车时不看手机、不听音乐<br/>9、不在马路边或车辆盲区内玩耍打闹<br/>10、未满12周岁不骑自行车，不使用成人手机开启并骑行共享单<br/>11、自觉遵守轨道交通、公交车乘车规范<br/>12、乘车系好安全带，不坐副驾驶座</p>' +
+                '<img src="/static/images/news13.jpg" style="width: 100%; height: auto;" >' +
+                '<p>13、不在河边、亲水平台、工地水塘等区域玩耍<br/>14、不捡拾掉入河道等水域的物品<br/>15、不在河道边洗东西、钓鱼虾等<br/>16、不在河道、湖泊等无安全设施、无救援人员的场所戏水或游泳<br/>17、不在游泳池里嬉戏打闹<br/>18、发现同伴溺水，立即寻求成人帮助，同时可向溺水者抛救生圈、泡沫板、救生绳等，但不可盲目施救</p>' +
+                '<img src="/static/images/news14.jpg" style="width: 100%; height: auto;" >' +
+                '<p>19、不在飘窗或阳台上玩耍<br/>' +
+                '20、不用湿手或湿布触碰家用电器<br/>' +
+                '21、不给陌生人开门<br/>' +
+                '22、不往窗外抛物<br/>' +
+                '23、规范使用燃气设备并注意开窗通风<br/>' +
+                '24、不玩火，发现火情及时拨打119</p>' +
+                '<img src="/static/images/news15.jpg" style="width: 100%; height: auto;" >' +
+                '<p>25、不去网吧、酒吧、电子游艺厅等未成年人不宜进入的场所<br/>' +
+                '26、控制手机、平板电脑等电子产品使用时间，不沉迷网络或电子游戏<br/>' +
+                '27、不玩渲染暴力、色情等不健康网络游戏，不制造与传播虚假信息<br/>' +
+                '28、注意信息安全，不将本人、家人及他人的姓名、肖像等信息在网上发送<br/>' +
+                '29、慎交网友，慎见网友，防范电信、网络诈骗<br/>' +
+                '30、不在工地、轨道、高压线等危险区域玩耍</p>' +
+                '<img src="/static/images/news16.jpg" style="width: 100%; height: auto;" >' +
+                '<p>31、不去尚未开发、开放的景点旅游<br/>' +
+                '32、选择正规、信誉好的旅行社旅游，并签订旅游合同、购买相关保险<br/>' +
+                '33、学习并掌握车辆、轮船、飞机等突发意外的自我保护知识和处置常识<br/>' +
+                '34、入住酒店时，及时了解消防逃生通道，索取酒店联系卡<br/>' +
+                '35、不在设有危险标志处停留，不在禁拍处拍照、摄影<br/>' +
+                '36、了解并尊重旅游地风俗、禁忌</p>' +
+                '<img src="/static/images/news17.jpg" style="width: 100%; height: auto;" >' +
+                '<p>37、多与父母、家人、朋友沟通、交流<br/>' +
+                '38、多与正直开朗、积极乐观的朋友交往<br/>' +
+                '39、多理解宽容他人、多自我激励、多微笑<br/>' +
+                '40、遇到问题尽力自己解决，同时学会咨询求助<br/>' +
+                '41、遇到挫折不气馁，相信天生我才必有用<br/>' +
+                '42、学会感恩，管理情绪，开心过好每一天</p>' +
+                '</div>'
+        },{
+            content: '<div class="content">' +
+                '<div id="signarea" style="margin-top: 80px;">' +
+                '<div style="text-align: center;margin: 10px;">' +
+                '<select id="areasel" style="width: 100px;height: 40px;">' +
+                '<option value="0">请选择县区</option>' +
+                '<option value="源城区">源城区</option>' +
+                '<option value="龙川县">龙川县</option>' +
+                '<option value="东源县">东源县</option>' +
+                '<option value="江东新区">江东新区</option>' +
+                '<option value="紫金县">紫金县</option>' +
+                '<option value="和平县">和平县</option>' +
+                '<option value="连平县">连平县</option>' +
+                '</select>' +
+                '</div>' +
+                '<div style="text-align: center;margin: 10px;">' +
+                'input type="text" placeholder="请输入您的姓名" name="name" id="name"style="width: 100px;height: 40px;"/>' +
+                '</div>' +
+                '<div style="text-align: center;margin: 10px;">' +
+                '<a><img src="/static/images/submit1.png"></a>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+        }];
+        $('.nav-wrap').on('click','.nav',tab);
+        function tab(event) {
+            let tar = event.currentTarget;
+            $(tar).addClass('active').siblings().removeClass('active');
+            let id = parseInt($(tar).attr('data-id'));
+            switch (id) {
+                case 0:
+                    tab_cont(objData[0])
+                    break
+                case 1:
+                    tab_cont(objData[1])
+                    break
+                case 2:
+                    tab_cont(objData[2])
+                    break
+            }
+        };
+        $(_this).on('load',function () {tab_cont(objData[0])});
+        function tab_cont(data) {
+            tab_cont_html = data.content;
+            $('.tab-cont').html(tab_cont_html);
+        }
+    })(window);
+</script>
+</body>
+</html>

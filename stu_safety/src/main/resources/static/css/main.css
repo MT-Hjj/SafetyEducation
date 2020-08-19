@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/*教育部专题*/
+html,body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-text-size-adjust: 100%;
+}
+body{
+  font-family: "微软雅黑", Arial, "宋体";
+  font-size: 16px;
+  background: #fff;
+}
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+a, area {
+  blr: expression(this.onFocus=this.blur());
+}
+
+a {
+  text-decoration: none;
+}
+
+dl, dt, dd, ol, ul, li {
+  list-style: none;
+}
+
+*:focus {
+  outline: none;
+  border: none;
+}
+
+#zhuanti-top {
+  height: 30px;
+  background: url(zhuanti_common_top_bg.jpg) repeat-x left top;
+}
+
+#zhuanti-top-section {
+  padding-left: 20px;
+  width: 970px;
+  margin: 0 auto;
+}
+#zhuanti-top-section img{
+  display: block;
+  height: 20px;
+  padding: 5px 0;
+}
+.zhuanti-section {
+  width: 1100px;
+  margin: 0 auto;
+  line-height: 26px;
+}
+
+/*焦点图*/
+.zhuanti-focus{position:relative; float:left; margin:0 15px 0 10px; width:415px; height:auto; border:1px solid #CCC;}
+.zhuanti-focus .swiper-wrapper{width: 500%; position:relative;}
+.zhuanti-focus .swiper-slide{float:left; width:20%; position:relative;}
+.zhuanti-focus .swiper-slide img{display:block; width:100%;}
+.zhuanti-focus .swiper-slide .zhuanti-focus-title{position:absolute; bottom:0; left:0; width:100%; height:30px; line-height:30px; color:#FFF; font-size:16px; font-weight:bold; text-indent:10px; background:url(http://www.moe.gov.cn/images/zhuanti_common_focustxt_bg.png) repeat-x left top;}
+.zhuanti-focus .swiper-slide .zhuanti-focus-title a{color:#FFF;}
+.zhuanti-focus .swiper-pagination{position:absolute; bottom:0; right:0; text-align:right;}
+.zhuanti-focus .swiper-pagination-bullet{display:inline-block; float:left; width:20px; height:30px; background:url(http://www.moe.gov.cn/images/zhuanti_common_focus_btn.png) no-repeat center;}
+.zhuanti-focus .swiper-pagination-bullet-active{background:url(http://www.moe.gov.cn/images/zhuanti_common_focus_btn_hover.png) no-repeat center;}
+/*要闻*/
+.zhuanti-yw{float:left; width:640px;}
+.zhuanti-yw h1{font-family:"黑体"; font-size:24px; text-align:center; line-height:1.5em;}
+.zhuanti-yw h1 a{color:#333;}
+.zhuanti-yw ul,.zhuanti-yw dl{margin-top:20px;}
+.zhuanti-yw li{padding:2px 0 2px 20px; margin-left:10px; font-size:16px; background:url(http://www.moe.gov.cn/images/jyb_common_blackpoint.gif) no-repeat 10px 14px; color:#4b4b4b;}
+.zhuanti-yw dd{padding:3px 0 3px 20px; margin-left:10px; font-size:16px; background:url(http://www.moe.gov.cn/images/jyb_common_blackpoint.gif) no-repeat 10px 14px; color:#4b4b4b;}
+.zhuanti-yw li.more,.zhuanti-yw dd.more{float:right; background:none; font-size:14px;}
+
+
+.zhuanti-foot {
+  clear: both;
+  width: 1100px;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+}
+.zhuanti-foot span {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+#wx_pic {
+  margin: 0 auto;
+  display: none;
+}
+
+.pchide {
+  display: none;
+}
+
+.mhide {
+  display: block;
+}
+
+@media screen and (max-width: 1010px) {
+  #zhuanti-top-section{
+    padding-left: 10px;
+    width: auto;
+  }
+  .zhuanti-foot {
+    width: 100%;
+  }
+  .zhuanti-foot span {
+    display: block;
+    clear: both;
+    line-height: 200%;
+  }
+
+  .pchide {
+    display: block;
+  }
+
+  .mhide {
+    display: none;
+  }
+}

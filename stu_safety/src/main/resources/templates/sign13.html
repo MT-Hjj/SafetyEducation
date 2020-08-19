@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="filetype" content="0">
+    <meta name="publishedtype" content="1">
+    <meta name="pagetype" content="2">
+    <meta name="catalogs" content="51725">
+    <meta name="subject" content="51725;1">
+    <meta name="uctk" content="enabled">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>快乐放暑假，“安全”不放假</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/detail.css">
+    <link type="text/css"rel="stylesheet" href="/static/css/sign.css">
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div id="header-img">
+    <img src="/static/images/header.png" style="width: 100%; height: auto;" >
+</div>
+<div class="lanmu-title">
+    <img src="/static/images/meiridaka.png" alt="每日打卡">
+</div>
+<div class="zhuanti-section">
+    <div class="menus menus2">
+        <ul>
+<!--            <div class="bg"></div>-->
+            <li id="li1" style="color: #000000"><span>1.观看视频>></span></li>
+            <li id="li2" style="color: #000000"><span>2.阅读提醒>></span></li>
+            <li id="li3" style="color: #FFFFFF;background-color: #009FE9;"><span>3.完成打卡</span></li>
+        </ul>
+        <div class="clear"></div>
+        <!--完成打卡-->
+        <div class="content">
+            <div id="signarea" style="margin-top: 80px;">
+                <div style="text-align: center;margin: 10px;">
+                    <select id="areasel" style="width: 100px;height: 40px;">
+                        <option value="0">请选择县区</option>
+                        <option value="源城区">源城区</option>
+                        <option value="龙川县">龙川县</option>
+                        <option value="东源县">东源县</option>
+                        <option value="江东新区">江东新区</option>
+                        <option value="紫金县">紫金县</option>
+                        <option value="和平县">和平县</option>
+                        <option value="连平县">连平县</option>
+                    </select>
+                </div>
+                <div style="text-align: center;margin: 10px;">
+                    <input type="text" placeholder="请输入您的姓名" name="name" id="name"style="width: 100px;height: 40px;"/>
+                </div>
+                <div style="text-align: center;margin: 10px;">
+                    <a><img src="/static/images/submit1.png"></a>
+                </div>
+            </div>
+        </div>
+        <!--完成打卡//-->
+    </div>
+</div>
+</div>
+
+<div class="zhuanti-foot"><span>河源日报社</span><span>新媒体中心制作</span><span>2020年7月</span></div>
+
+<script type="text/javascript">
+
+    $("#signbtn").click(function () {
+        var myDate = new Date();
+        var time = myDate.toLocaleDateString();
+        var options=$("#areasel option:selected");
+        var area = options.val();
+        var name = $("#name").val();
+        alert(name);
+        alert(area);
+        alert(time);
+        if (area==0){
+            alert("请选择县区");
+        }else if(name==null){
+            alert("请输入姓名");
+        }else{
+            $.ajax({
+                url:'/addList',
+                type:'get',
+                data:{name:name,area:area,time:time},
+                success: function (res) {
+                    if(res.msg=="signed"){
+                        alert("您今日已完成打卡，请勿重复打卡");
+                    }else if(res.msg=="success"){
+                        alert("打卡成功~");
+                        window.location.href="/index.html";
+                    }else {
+                        alert("打卡失败");
+                    }
+                },error: function () {
+                    alert("接口调用失败");
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>

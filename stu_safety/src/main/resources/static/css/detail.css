@@ -1,0 +1,81 @@
+body{}
+/* body{ no-repeat center 30px #fae3d1; background:url(top.jpg) no-repeat center 0px } */
+.zhuanti-section{margin: 0 auto 30px; color: #4b4b4b; line-height: 32px;}
+
+a{color: #d75d37;}
+a:hover{text-decoration: underline;}
+
+/* #header{width: 1030px; margin: 40px auto 356px; text-align: center;}
+#logo{display: block; margin: 0 auto;}
+#slogan{display: block; margin: 25px auto 45px;} */
+/* #top{margin: 0 auto;width: 1000px;height: auto;} */
+/* #header strong{font-size: 26px; color: #c5836c;} */
+
+.zhuanti-focus{width: 498px; height: 295px; margin-left: 0; margin-right: 50px;}
+.zhuanti-yw{width: 550px; line-height: 160%;}
+.zhuanti-yw h1 {line-height: 110%; margin-bottom: 10px;}
+.zhuanti-yw h1 a{color: #d75d37;}
+.zhuanti-yw li{font-size: 20px; margin-left: 20px;}
+
+/*.lanmu-title{background: url(zhuanti_2020xueqianjiaoyu_lmbj.png) no-repeat center 40px;}*/
+/*.lanmu-title{no-repeat：center 40px;}*/
+.lanmu-title img{display: block; margin: 0 auto;}
+.lanmu-title input{display: block;margin: 0 auto;}
+
+.daka{padding: 10px 60px; text-align: justify; border: 1px solid #3364d7; background: #cfefff;margin-top: 20px}
+.daka input{text-align: center;}
+
+.zhuanti-section dd{float: left; width: 540px; margin-top: 20px;}
+.left-side{margin-right: 20px;}
+.zhuanti-section dd h2{margin-bottom: 10px; font-size: 20px; text-align: center;}
+.zhuanti-section dd h2 a{color: #666;}
+/* .description{padding: 10px 20px; text-indent: 32px; text-align: justify; border: 1px solid #3364d7; background: #cfefff;} */
+.description{padding: 10px 60px; text-align: justify; border: 1px solid #3364d7; background: #cfefff;}
+.description h3{text-align: center; color: #3364d7;}
+.description p{text-align: left;}
+.description button{display:block;margin:10px auto}
+/* .description a{float: right;}
+ */
+.description2{padding: 10px 60px; text-align: justify; border: 1px solid #3364d7; background: #cfefff;height: 386px;}
+.description2 h3{text-align: left; color: #3364d7; margin:10px;}
+.description2 p{text-align: center;font-size: 26px;color: #d75d37;}
+.description2 button{display:block;margin:10px auto}
+
+.content{padding:10px 10px 10px 10px; border:1px solid #a4a4a4; background:#FFF; font-size:16px; color:#4B4B4B; line-height:32px; min-height:600px; _min-height:600px;}
+/* .content{padding:50px 94px 20px 94px; border:1px solid #a4a4a4; background:#FFF; font-size:16px; color:#4B4B4B; line-height:32px; min-height:600px; _min-height:600px;} */
+.content h1{font-size:28px; font-weight:bold; text-align:center; margin-top: 35px;}
+.content p{padding:16px 0;}
+#content_date_source{margin:20px 0 19px 0; padding-left:30px;}
+#content_date_source{font-family:"宋体"; font-size:12px; color:#6B6B6B; background:#E9E9E9;}
+
+#content_date_source2{margin:20px 0 19px 0; padding-left:30px;}
+#content_date_source2{font-family:"宋体"; font-size:12px; color:#6B6B6B; background:#E9E9E9;}
+
+#huigu-title{margin-bottom: 20px; background: none;}
+#wangqi li{float: left;}
+.tips{display: none; text-align: right; font-size: 12px;}
+
+@media screen and (max-width: 1010px){
+	body{background-image: none;}
+	#header{width: 100%; margin: 0; padding: 20px 0 60px; background: url(zhuanti_2020xueqianjiaoyu_bg.jpg) no-repeat center top; background-size: 100% 100%;}
+	#logo{height: 60px;}
+	#slogan{width: 90%; max-width: 1030px;}
+	#header strong{ text-shadow: #fff 1px 0 0, #fff 0 1px 0, #fff -1px 0 0, #fff 0 -1px 0;}
+	.zhuanti-section{width: 100%; margin-bottom: 10px;}
+
+	.zhuanti-focus{width: 100%; height: auto; margin-bottom: 10px; border: none;}
+	.zhuanti-yw{float: none; width: auto; padding: 0 10px;}
+	.xueqian-title{background-position: center bottom; -webkit-background-size: 180% auto;	background-size: 180% auto;}
+	.xueqian-title img{height: 60px;}
+	
+	.zhuanti-section dd{width: 100%; margin-right: 0;}
+	.video{width: 100%; height: auto;}
+
+	#huigu-box{height: 203px;}
+	#wangqi{overflow-x: scroll;}
+	#wangqi li{float: none; display: table-cell;}
+	.tips{display: block; margin-right: 10px;}
+}
+@media screen and (max-width: 480px) {	
+	#header strong{font-size: 18px;}
+}
